@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Store do
   let :images_list do
-    ["/tmp/image.png"]
+    [ImageFile.new("/tmp/image.png")]
   end
 
   let(:uploaded_link) {"http://test.te/te/te/file.png"}
