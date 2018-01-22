@@ -4,21 +4,14 @@ class Store
   end
 
   def save_images(images_list)
-    images_list.map do |filepath|
-      filelink = store_file(filepath)
-      remove_tmp_file(filepath)
-
-      filelink
+    images_list.map do |image_file|
+      store_file(image_file)
     end
   end
 
   private
  
-  def store_file(filepath)
-    @uploader.store_file(filepath)
-  end
-
-  def remove_tmp_file(filepath)
-    File.delete(filepath) if File.exist?(filepath)
+  def store_file(image_file)
+    @uploader.store_file(image_file)
   end
 end

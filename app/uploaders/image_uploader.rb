@@ -5,8 +5,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  def store_file(filepath)
-    store!(File.new(filepath, 'r'))
+  def store_file(file)
+    store!(file)
 
     url
   end

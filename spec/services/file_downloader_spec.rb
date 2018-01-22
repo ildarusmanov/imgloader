@@ -18,8 +18,8 @@ describe FileDownloader do
     expect(files.length).to eq(2)
     expect(files.first).not_to eq(files.last)
     
-    files.each do |filepath|
-      expect(File.size(filepath)).to eq(File.size(fixture_file_path))
+    files.each do |file|
+      expect(file.size).to eq(File.size(fixture_file_path))
     end
   end
 end
