@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'fog'
 gem "fog-aws"
+gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
 
 gem 'rails_12factor', group: :production
