@@ -13,16 +13,24 @@
 ```
 git clone https://github.com/ildarusmanov/imgloader.git
 cd imgloader
+
+// update env variables
+cp .env.example .env
+vim .env
+
+// install dependencies
 bundle install
 ```
 
 ## Tests
 ```
+// run all tests
 rake
 ```
 
 ## Run
 
 ```
+// start server
 rails s
 ```
