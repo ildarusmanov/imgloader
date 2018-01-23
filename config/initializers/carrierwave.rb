@@ -1,14 +1,16 @@
+require "carrierwave/storage/fog"
+
 CarrierWave.configure do |config|
   config.ignore_integrity_errors = false
   config.ignore_processing_errors = false
   config.ignore_download_errors = false
 
   if Rails.env.test?
-    config.storage = :file
+    config.storage CarrierWave::Storage::File
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp"
   else
-    config.storage :fog
+    config.storage CarrierWave::Storage::Fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider:              'AWS',

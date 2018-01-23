@@ -32,9 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem "fog-aws"
+gem 'carrierwave', '~> 1.0'
 
 gem 'rails_12factor', group: :production
 
