@@ -1,7 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  storage :fog
   process resize_to_fill: [600, 600]
   process convert: 'png'
 
