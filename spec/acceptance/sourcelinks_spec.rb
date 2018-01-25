@@ -1,7 +1,7 @@
 require "acceptance_helper"
 
 resource "Sourcelinks" do
-  get "/sourcelinks" do
+  get "/api/v1/sourcelinks" do
     before do
       5.times do |i|
         create(:sourcelink)
@@ -16,7 +16,7 @@ resource "Sourcelinks" do
     end
   end
 
-  post "/sourcelinks" do
+  post "/api/v1/sourcelinks" do
     parameter :url, required: true, scope: :sourcelink
 
     let(:sourcelink_url) { "http://test.com" }
@@ -34,7 +34,7 @@ resource "Sourcelinks" do
     end
   end
 
-  get "/sourcelinks/:id" do
+  get "/api/v1/sourcelinks/:id" do
     let :sourcelink do
       create(:sourcelink)
     end

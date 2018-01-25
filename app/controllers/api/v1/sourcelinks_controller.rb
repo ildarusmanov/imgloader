@@ -1,4 +1,4 @@
-class SourcelinksController < ApplicationController
+class Api::V1::SourcelinksController < ApplicationController
   expose :sourcelinks, ->{ Sourcelink.all }
   expose :sourcelink
 

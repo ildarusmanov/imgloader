@@ -1,4 +1,4 @@
-class ImagesController < ApplicationController
+class Api::V1::ImagesController < ApplicationController
   respond_to :json
 
   expose :sourcelink, -> { Sourcelink.find_by_id params[:sourcelink_id] }

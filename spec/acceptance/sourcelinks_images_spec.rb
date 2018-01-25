@@ -9,7 +9,7 @@ resource "Sourcelinks images" do
     sourcelink.images.first
   end
 
-  get "/sourcelinks/:sourcelink_id/images" do
+  get "/api/v1/sourcelinks/:sourcelink_id/images" do
     let(:sourcelink_id) { sourcelink.id }
 
     example_request "Sourcelink images listing" do
@@ -26,7 +26,7 @@ resource "Sourcelinks images" do
     end
   end
 
-  get "/sourcelinks/:sourcelink_id/images/:id" do
+  get "/api/v1/sourcelinks/:sourcelink_id/images/:id" do
     let(:sourcelink_id) { image.sourcelink_id }
     let(:id) { image.id }
 
