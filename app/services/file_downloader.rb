@@ -26,7 +26,7 @@ class FileDownloader
   def download_from_web_into(link, filepath)
     uri = URI(link)
 
-    image = ImageFile.new(filepath, "wb")
+    image = ImageFile.new(filepath, link, "wb")
 
     Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
       request = Net::HTTP::Get.new uri

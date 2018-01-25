@@ -12,6 +12,9 @@ class Store
   private
  
   def store_file(image_file)
-    @uploader.store_file(image_file)
+    {
+      url: @uploader.store_file(image_file),
+      source_url: image_file.source_url
+    }
   end
 end
