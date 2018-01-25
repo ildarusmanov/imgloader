@@ -67,6 +67,8 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.3)
+    dependency_injection (0.4.3)
+      activesupport
     diff-lcs (1.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -262,6 +264,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.1)
     multi_json (1.13.1)
+    mustache (1.0.5)
     netrc (0.11.0)
     nio4r (2.2.0)
     nokogiri (1.8.1)
@@ -316,6 +319,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rmagick (2.16.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -333,6 +340,10 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
+    rspec_api_documentation (5.1.0)
+      activesupport (>= 3.0.0)
+      mustache (~> 1.0, >= 0.99.4)
+      rspec (~> 3.0)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
     sass (3.5.5)
@@ -397,6 +408,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  dependency_injection
   dotenv-rails
   fog
   fog-aws
@@ -407,6 +419,7 @@ DEPENDENCIES
   rails_12factor
   rmagick
   rspec-rails (~> 3.7)
+  rspec_api_documentation
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -7,7 +7,7 @@ describe FileDownloader do
     stub_request(:any, file_link)
       .to_return(body: File.new(fixture_file_path), status: 200)
 
-    FileDownloader.new(Pathname.new("/tmp"))
+    FileDownloader.new
   end
  
   it { expect(downloader).to respond_to(:download_files) }
