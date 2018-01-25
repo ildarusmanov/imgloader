@@ -23,9 +23,9 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: <%= DB_NAME %>
-  username: <%= DB_USER %>
-  password: <%= DB_PASSWORD %>
-  host: <%= DB_HOST %>
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USER") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST") %>
   port: 3306
 
