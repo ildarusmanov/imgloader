@@ -9,11 +9,11 @@ describe Sourcelink, type: :model do
   end
 
   let :valid_attrs do
-    { link: "http://test.link.com" }
+    { url: "http://test.link.com" }
   end
  
   let :invalid_attrs do
-    { link: "test" }
+    { url: "test" }
   end
 
   let :sourcelink_with_images do
@@ -22,7 +22,7 @@ describe Sourcelink, type: :model do
     sourcelink
   end
 
-  it { expect(Sourcelink.create(valid_attrs).to be_truthy }
-  it { expect(Sourcelink.create(invalid_attrs).to be_falsey }
+  it { expect(Sourcelink.create(valid_attrs).persisted?).to be_truthy }
+  it { expect(Sourcelink.create(invalid_attrs).persisted?).to be_falsey }
 end
 

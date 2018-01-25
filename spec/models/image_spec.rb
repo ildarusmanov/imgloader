@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Image, type: :model do
   let(:sourcelink) do
-    Sourcelink.create(link: "http://test.link.com")
+    Sourcelink.create(url: "http://test.link.com")
   end
 
   let(:valid_attributes) do

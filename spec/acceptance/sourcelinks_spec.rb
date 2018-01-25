@@ -4,14 +4,14 @@ resource "Sourcelinks" do
   get "/sourcelinks" do
     before do
       5.times do |i|
-        Sourcelink.create(url: => "http://test.com/page#{i}")
+        Sourcelink.create(url: "http://test.com/page#{i}")
       end
     end
 
     example "Sourcelinks listing" do
       do_request
 
-      status.should == 200
+      expect(status).to eq(200)
       expect(response_body).to eq(Sourcelink.all.to_json)
     end
   end
@@ -26,7 +26,7 @@ resource "Sourcelinks" do
 
       sourcelink = JSON.parse(response_body)
 
-      status.should == 200
+      expect(status).to eq(200)
       expect(sourcelink.except("id", "created_at", "updated_at")).to eq({
         url: sourcelink_url
       })
@@ -45,8 +45,7 @@ resource "Sourcelinks" do
     example "Get sourcelink by ID" do
       do_request
 
-      status.should == 200
-
+      expect(status).to eq(200)
       expect(response_body).to eq(sourcelink.to_json)
     end
   end

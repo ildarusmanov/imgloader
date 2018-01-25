@@ -22,7 +22,7 @@ resource "Sourcelinks images" do
     example "Sourcelink images listing" do
       do_request
 
-      status.should == 200
+      expect(status).to eq(200)
       expect(response_body).to eq(sourcelink.images.to_json)
     end
   end
@@ -34,7 +34,7 @@ resource "Sourcelinks images" do
     example "Sourcelink image" do
       do_request
     
-      status.should == 200
+      expect(status).to eq(200)
       expect(response_body).to eq(image.to_json)
     end
   end

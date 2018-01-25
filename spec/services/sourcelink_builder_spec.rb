@@ -11,16 +11,16 @@ describe SourcelinkBuilder do
     SourcelinkBuilder.new(image_processor)
   end
 
-  let(:link) { "http://test.com" }
   let(:create_params) do
-    { sourcelink: { url: link } }
+    { url: "http://test.com" }
   end
 
   it { expect(builder).to respond_to(create) }
+
   it "Should create new sourcelink" do
     sourcelink = builder.create(create_params)
 
-    expect(sourcelink.url).to eq(link)
+    expect(sourcelink.url).to eq(create_params[:url])
     expect(sourcelink.images.length).to eq(images.length)
     expect(builder.errors.length).to eq(0)
   end
