@@ -1,0 +1,5 @@
+count images.count
+result images.each do |image|
+  id image.id
+  url image.url
+  source_url image.source_url

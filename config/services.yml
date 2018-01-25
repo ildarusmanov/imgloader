@@ -1,4 +1,27 @@
-parameters:
 services:
+  file_downloader:
+    class: 'FileDownloader'
+  page_loader:
+    class: 'PageLoader'
+  page_parser:
+    class: 'PageParser'
+  image_uploader:
+    class: 'ImageUploader'
+  store:
+    class: 'Store'
+    arguments:
+      - '@image_uploader'
+  image_processor:
+    class: 'ImageProcessor'
+    arguments:
+      - '@page_parser'
+      - '@page_loader'
+      - '@file_downloader'
+      - '@store'
+  sourcelink_builder:
+    class: 'SourcelinkBuilder'
+    arguments:
+      - '@image_processor' 
+  
 
 

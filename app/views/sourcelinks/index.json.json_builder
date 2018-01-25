@@ -1,0 +1,5 @@
+count courcelinks.count
+results sourcelinks do |sourcelink|
+  id sourcelink.id
+  url sourcelink.url
+end
