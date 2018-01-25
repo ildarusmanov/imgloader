@@ -1,3 +1,4 @@
+require 'faker'
 require 'webmock/rspec'
 require 'rspec_api_documentation'
 
