@@ -4,13 +4,15 @@ resource "Sourcelinks" do
   get "/sourcelinks" do
     before do
       5.times do |i|
-        Sourcelink.create(url: "http://test.com/page#{i}")
+        create(:sourcelink)
       end
     end
-
+    
     example_request "Sourcelinks listing" do
+      parsed = JSON.parse(response_body)
+
       expect(status).to eq(200)
-      expect(response_body).to eq(Sourcelink.all.to_json)
+      expect(parsed["count"]).to eq(Sourcelink.count)
     end
   end
 
@@ -18,29 +20,33 @@ resource "Sourcelinks" do
     parameter :url, required: true, scope: :sourcelink
 
     let(:sourcelink_url) { "http://test.com" }
-    
+
+    before do
+      stub_request(:any, sourcelink_url)
+        .to_return(body: "test", status: 200)
+    end
+ 
     example_request "Create new sourcelink" do
-      sourcelink = JSON.parse(response_body)
+      parsed = JSON.parse(response_body)
 
       expect(status).to eq(200)
-      expect(sourcelink.except("id", "created_at", "updated_at")).to eq({
-        url: sourcelink_url
-      })
+      expect(parsed["url"]).to eq(sourcelink_url)
     end
   end
 
   get "/sourcelinks/:id" do
-    let(:sourcelink_url) { "http://test.com" }
-
     let :sourcelink do
-      Sourcelink.create(url: sourcelink_url)
+      create(:sourcelink)
     end
 
     let(:id) { sourcelink.id }
     
     example_request "Get sourcelink by ID" do
+      parsed = JSON.parse(response_body)
+
       expect(status).to eq(200)
-      expect(response_body).to eq(sourcelink.to_json)
+      expect(parsed["id"]).to eq(sourcelink.id)
+      expect(parsed["url"]).to eq(sourcelink.url)
     end
   end
 end

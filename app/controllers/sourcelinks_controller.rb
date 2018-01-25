@@ -1,5 +1,5 @@
 class SourcelinksController < ApplicationController
-  expose :sourcelinks
+  expose :sourcelinks, ->{ Sourcelink.all }
   expose :sourcelink
 
   respond_to :json
