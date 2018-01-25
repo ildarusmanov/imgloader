@@ -23,7 +23,7 @@ class SourcelinksController < ApplicationController
   private
 
   def builder
-    container.get(SOURCELINK_BUILDER)
+    get_di_container.get(SOURCELINK_BUILDER)
   end
 
   def sourcelink_params

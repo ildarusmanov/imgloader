@@ -33,13 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'fog'
-gem "fog-aws"
+gem 'fog-aws'
 gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
 gem 'rails_12factor', group: :production
 gem 'dependency_injection'
-gem 'json_builder'
 gem 'decent_exposure', '3.0.0'
+gem 'responders'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

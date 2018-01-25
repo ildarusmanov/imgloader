@@ -1,8 +1,9 @@
 class ImagesController < ApplicationController
   respond_to :json
 
+  expose :sourcelink, -> { Sourcelink.find_by_id params[:sourcelink_id] }
   expose :images, from: :sourcelink
-  expose :image, from: :sourcelink
+  expose :image, -> { sourcelink.images.find_by_id params[:id] }
 
   def index
     respond_with images

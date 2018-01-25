@@ -7,8 +7,8 @@ resource "Sourcelinks images" do
 
   let :image_attrs do
     {
-      source_url: "http://t.com/test/img.png",
       url: "http://u.com/i123.png",
+      source_url: "http://t.com/test/img.png"
     }
   end
 
@@ -27,7 +27,7 @@ resource "Sourcelinks images" do
     end
   end
 
-  get "/sourcelinks/:sourcelink_id/:id" do
+  get "/sourcelinks/:sourcelink_id/images/:id" do
     let(:sourcelink_id) { sourcelink.id }
     let(:id) { image.id }
 

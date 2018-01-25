@@ -8,9 +8,7 @@ resource "Sourcelinks" do
       end
     end
 
-    example "Sourcelinks listing" do
-      do_request
-
+    example_request "Sourcelinks listing" do
       expect(status).to eq(200)
       expect(response_body).to eq(Sourcelink.all.to_json)
     end
@@ -21,9 +19,7 @@ resource "Sourcelinks" do
 
     let(:sourcelink_url) { "http://test.com" }
     
-    example "Create new sourcelink" do
-      do_request
-
+    example_request "Create new sourcelink" do
       sourcelink = JSON.parse(response_body)
 
       expect(status).to eq(200)
@@ -42,9 +38,7 @@ resource "Sourcelinks" do
 
     let(:id) { sourcelink.id }
     
-    example "Get sourcelink by ID" do
-      do_request
-
+    example_request "Get sourcelink by ID" do
       expect(status).to eq(200)
       expect(response_body).to eq(sourcelink.to_json)
     end
