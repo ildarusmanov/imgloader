@@ -1,0 +1,2 @@
+class Sourcelink < ApplicationRecord
+end
