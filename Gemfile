@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -36,12 +34,18 @@ gem 'fog'
 gem 'fog-aws'
 gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
-gem 'rails_12factor', group: :production
 gem 'dependency_injection'
 gem 'decent_exposure', '3.0.0'
 gem 'responders'
 
+group :production do
+  gem 'rails_12factor'
+  gem 'mysql2'
+end
+
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
