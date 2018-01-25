@@ -38,18 +38,23 @@ gem 'rmagick'
 gem 'carrierwave', '~> 1.0'
 gem 'rails_12factor', group: :production
 gem 'dependency_injection'
+gem 'json_builder'
+gem 'decent_exposure', '3.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.7'
-  gem "webmock"
   gem 'dotenv-rails'
-  gem 'rspec_api_documentation'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :test do
+  gem "webmock"
   gem 'capybara'
+  gem 'rspec_api_documentation'
+  gem 'factory_bot_rails', :require => false
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 end
 
 group :development do
