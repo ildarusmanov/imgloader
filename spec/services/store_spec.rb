@@ -20,7 +20,7 @@ describe Store do
     saved_images = store.save_images(images_list)
 
     expect(saved_images.length).to eq(images_list.length)
-    expect(saved_images.first).to eq(uploaded_link)
+    expect(saved_images.first[:url]).to eq(uploaded_link)
   end
 end
 

@@ -75,6 +75,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.3)
+    database_cleaner (1.6.1)
     decent_exposure (3.0.0)
       activesupport (>= 4.0)
     dependency_injection (0.4.3)
@@ -426,6 +427,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  database_cleaner
   decent_exposure (= 3.0.0)
   dependency_injection
   dotenv-rails

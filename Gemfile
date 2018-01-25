@@ -54,7 +54,7 @@ group :test do
   gem 'rspec_api_documentation'
   gem 'factory_bot_rails', :require => false
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-
+  gem 'database_cleaner'
 end
 
 group :development do

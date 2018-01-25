@@ -7,4 +7,5 @@ describe ImageFile do
   it { expect(image_file.filepath).to eq(image_file_path) }
   it { expect(image_file).to respond_to(:original_filename) }
   it { expect(image_file).to respond_to(:write) }
+  it { expect(image_file).to respond_to(:source_url) }
 end
