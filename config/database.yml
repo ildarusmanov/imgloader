@@ -21,11 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: mysql2
   encoding: utf8
-  database: <%= ENV.fetch("DB_NAME") %>
-  username: <%= ENV.fetch("DB_USER") %>
-  password: <%= ENV.fetch("DB_PASSWORD") %>
-  host: <%= ENV.fetch("DB_HOST") %>
+  url: <%= ENV.fetch("DB_URL") %>
   port: 3306
 
