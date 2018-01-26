@@ -1,8 +1,6 @@
-class Api::V1::SourcelinksController < ApplicationController
+class Api::V1::SourcelinksController < Api::V1::ApplicationController
   expose :sourcelinks, ->{ Sourcelink.all }
   expose :sourcelink
-
-  respond_to :json
 
   SOURCELINK_BUILDER = 'sourcelink_builder'
 
