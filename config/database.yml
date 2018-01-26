@@ -22,6 +22,6 @@ test:
 
 production:
   encoding: utf8
-  url: <%= ENV.fetch("DB_URL") %>
+  url: <%= ENV.fetch("DB_URL") { "" } %>
   port: 3306
 
