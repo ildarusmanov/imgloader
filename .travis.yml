@@ -1,6 +1,10 @@
 language: ruby
 rvm:
   - 2.2
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE imgloader_test;'
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
